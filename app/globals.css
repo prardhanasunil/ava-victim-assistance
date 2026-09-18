@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F8F6F2;
+  --foreground: #252B30;
+
+  /* AVA Care palette */
+  --ava-slate: #4C5B68;
+  --ava-dusty: #8197A5;
+  --ava-mist: #D8E1E5;
+  --ava-cream: #F8F6F2;
+  --ava-rose: #B98C98;
+  --ava-charcoal: #252B30;
+  --ava-white: #FFFFFF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-ava-slate: var(--ava-slate);
+  --color-ava-dusty: var(--ava-dusty);
+  --color-ava-mist: var(--ava-mist);
+  --color-ava-cream: var(--ava-cream);
+  --color-ava-rose: var(--ava-rose);
+  --color-ava-charcoal: var(--ava-charcoal);
+  --color-ava-white: var(--ava-white);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
