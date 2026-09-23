@@ -9,21 +9,54 @@ const emergencyServices = [
     icon: "🚨",
     titleKey: "policeEmergency",
     descriptionKey: "policeEmergencyDescription",
+    contacts: [
+      {
+        number: "112",
+        labelKey: "emergencyServices",
+        sourceKey: "emergencySource112",
+      },
+    ],
   },
   {
     icon: "🏥",
     titleKey: "medicalEmergency",
     descriptionKey: "medicalEmergencyDescription",
+    contacts: [
+      {
+        number: "112",
+        labelKey: "emergencyServices",
+        sourceKey: "emergencySource112",
+      },
+    ],
   },
   {
     icon: "👩",
     titleKey: "womenChildSupport",
     descriptionKey: "womenChildSupportDescription",
+    contacts: [
+      {
+        number: "181",
+        labelKey: "womenHelpline",
+        sourceKey: "emergencySource181",
+      },
+      {
+        number: "1098",
+        labelKey: "childHelpline",
+        sourceKey: "emergencySource1098",
+      },
+    ],
   },
   {
     icon: "💻",
     titleKey: "cybercrimeSupport",
     descriptionKey: "cybercrimeSupportDescription",
+    contacts: [
+      {
+        number: "1930",
+        labelKey: "cyberFinancialFraud",
+        sourceKey: "emergencySource1930",
+      },
+    ],
   },
 ] as const;
 
@@ -60,17 +93,6 @@ export default function EmergencyPage() {
           </p>
         </div>
 
-        {/* Demo warning */}
-        <div className="mt-8 rounded-2xl border border-ava-rose/30 bg-ava-rose/10 p-5">
-          <p className="font-semibold text-ava-charcoal">
-            {t("demoData")}
-          </p>
-
-          <p className="mt-2 text-sm leading-6 text-ava-slate">
-            {t("emergencyDemoText")}
-          </p>
-        </div>
-
         {/* Emergency services */}
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {emergencyServices.map((service) => (
@@ -88,8 +110,44 @@ export default function EmergencyPage() {
                 {t(service.descriptionKey)}
               </p>
 
-              <div className="mt-6 rounded-xl bg-ava-mist px-4 py-3 text-sm text-ava-slate">
-                {t("noVerifiedContacts")}
+              {/* Verified contacts */}
+              <div className="mt-6 space-y-4">
+                {service.contacts.map((contact) => (
+                  <div
+                    key={contact.number}
+                    className="rounded-xl border border-ava-mist bg-ava-mist/50 p-4"
+                  >
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wide text-ava-slate">
+                          {t(contact.labelKey)}
+                        </p>
+
+                        <p className="mt-1 text-2xl font-bold tracking-wide text-ava-charcoal">
+                          {contact.number}
+                        </p>
+                      </div>
+
+                      <a
+                        href={`tel:${contact.number}`}
+                        className="flex min-h-11 items-center justify-center rounded-xl bg-ava-rose px-5 py-3 text-sm font-semibold text-white transition hover:bg-ava-slate focus:outline-none focus:ring-2 focus:ring-ava-rose focus:ring-offset-2"
+                        aria-label={`${t("callNow")} ${contact.number}`}
+                      >
+                        📞 {t("callNow")}
+                      </a>
+                    </div>
+
+                    <div className="mt-3 border-t border-ava-dusty/30 pt-3">
+                      <p className="text-xs leading-5 text-ava-slate">
+                        ✓ {t("verifiedContact")}
+                      </p>
+
+                      <p className="mt-1 text-xs leading-5 text-ava-slate">
+                        {t(contact.sourceKey)}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
@@ -114,9 +172,7 @@ export default function EmergencyPage() {
             {t("appName")} — {t("tagline")}
           </p>
 
-          <p className="mt-2">
-            {t("footerDescription")}
-          </p>
+          <p className="mt-2">{t("footerDescription")}</p>
         </div>
       </footer>
 

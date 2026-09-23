@@ -4,6 +4,21 @@ export const translations = {
     language: "English",
     appName: "AVA",
     tagline: "App for Victim Assistance",
+    emergencyServices: "Emergency Services",
+womenHelpline: "Women Helpline",
+childHelpline: "Child Helpline",
+cyberFinancialFraud: "Cyber Financial Fraud",
+callNow: "Call Now",
+verifiedContact: "Verified Contact",
+
+emergencySource112:
+  "Government of India — Emergency Response Support System (112).",
+emergencySource181:
+  "Government of India — Women Helpline (181).",
+emergencySource1098:
+  "Government of India — Child Helpline (1098).",
+emergencySource1930:
+  "Government of India — Cyber Crime Helpline (1930) for reporting cyber financial fraud.",
 markAsRead: "Mark as read",
 markAllRead: "Mark all as read",
     updatesLabel: "Updates & Notifications",
@@ -719,6 +734,21 @@ updatesIntro:
 unread: "ಓದದವು",
 new: "ಹೊಸದು",
 markAllRead: "ಎಲ್ಲವನ್ನೂ ಓದಿದಂತೆ ಗುರುತಿಸಿ",
+emergencyServices: "ತುರ್ತು ಸೇವೆಗಳು",
+womenHelpline: "ಮಹಿಳಾ ಸಹಾಯವಾಣಿ",
+childHelpline: "ಮಕ್ಕಳ ಸಹಾಯವಾಣಿ",
+cyberFinancialFraud: "ಸೈಬರ್ ಹಣಕಾಸು ವಂಚನೆ",
+callNow: "ಈಗ ಕರೆ ಮಾಡಿ",
+verifiedContact: "ಪರಿಶೀಲಿಸಲಾದ ಸಂಪರ್ಕ",
+
+emergencySource112:
+  "ಭಾರತ ಸರ್ಕಾರ — ತುರ್ತು ಪ್ರತಿಕ್ರಿಯೆ ಬೆಂಬಲ ವ್ಯವಸ್ಥೆ (112).",
+emergencySource181:
+  "ಭಾರತ ಸರ್ಕಾರ — ಮಹಿಳಾ ಸಹಾಯವಾಣಿ (181).",
+emergencySource1098:
+  "ಭಾರತ ಸರ್ಕಾರ — ಮಕ್ಕಳ ಸಹಾಯವಾಣಿ (1098).",
+emergencySource1930:
+  "ಭಾರತ ಸರ್ಕಾರ — ಸೈಬರ್ ಅಪರಾಧ ಸಹಾಯವಾಣಿ (1930), ಸೈಬರ್ ಹಣಕಾಸು ವಂಚನೆ ವರದಿ ಮಾಡಲು.",
 
 updateAll: "ಎಲ್ಲವೂ",
 updateImportant: "ಪ್ರಮುಖ",
@@ -1484,6 +1514,21 @@ reportPrototypeText:
     language: "हिन्दी",
     appName: "AVA",
     tagline: "पीड़ित सहायता के लिए ऐप",
+    emergencyServices: "आपातकालीन सेवाएँ",
+womenHelpline: "महिला हेल्पलाइन",
+childHelpline: "बाल हेल्पलाइन",
+cyberFinancialFraud: "साइबर वित्तीय धोखाधड़ी",
+callNow: "अभी कॉल करें",
+verifiedContact: "सत्यापित संपर्क",
+
+emergencySource112:
+  "भारत सरकार — आपातकालीन प्रतिक्रिया सहायता प्रणाली (112)।",
+emergencySource181:
+  "भारत सरकार — महिला हेल्पलाइन (181)।",
+emergencySource1098:
+  "भारत सरकार — बाल हेल्पलाइन (1098)।",
+emergencySource1930:
+  "भारत सरकार — साइबर अपराध हेल्पलाइन (1930), साइबर वित्तीय धोखाधड़ी की रिपोर्ट करने के लिए।",
 
     markAsRead: "पढ़ा हुआ चिह्नित करें",
     updatesLabel: "अपडेट और सूचनाएँ",
