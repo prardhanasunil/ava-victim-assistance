@@ -1,4 +1,4 @@
-
+﻿
 export const translations = {
   en: {
     language: "English",
@@ -157,12 +157,13 @@ ngoPeerSupportGroup: "Peer Support Group",
 
     // Common
     backToAVA: "Back to AVA",
+    backToSupport: "Back to Support",
     learnMore: "Learn more →",
     viewDetails: "View details →",
     informationSource: "Information source",
     demoVersion: "DEMO VERSION",
     demoData: "DEMO DATA — NOT FOR REAL-WORLD USE",
-    verified: "Verified",
+  
     notProvided: "Not provided",
     cancel: "Cancel",
     save: "Save",
@@ -283,11 +284,9 @@ ngoPeerSupportGroup: "Peer Support Group",
     noResults: "No support services found.",
     tryDifferentFilters:
       "Try changing your search or filters.",
-governmentLegalSupport:
-  "Government Legal Support",
-governmentLegalSupportDescription:
-  "Access government legal-aid services through Karnataka's District Legal Services Authorities (DLSAs).",
 
+
+  
 supportDataStatusTitle:
   "Verified Government Legal Support",
 supportDataStatusText:
@@ -813,7 +812,9 @@ reportPrototypeText:
   // KANNADA
   // ============================================================
 
-  kn: {
+
+
+kn: {
     markAsRead: "ಓದಿದಂತೆ ಗುರುತಿಸಿ",
     updatesLabel: "ನವೀಕರಣಗಳು ಮತ್ತು ಅಧಿಸೂಚನೆಗಳು",
 updatesTitle: "ನವೀಕರಣಗಳು ಮತ್ತು ಅಧಿಸೂಚನೆಗಳು",
@@ -1014,13 +1015,14 @@ reportPrototypeText:
 
     // Common
     backToAVA: "AVA ಗೆ ಹಿಂತಿರುಗಿ",
+    backToSupport: "ಬೆಂಬಲಕ್ಕೆ ಹಿಂತಿರುಗಿ",
     learnMore: "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ →",
     viewDetails: "ವಿವರಗಳನ್ನು ನೋಡಿ →",
     informationSource: "ಮಾಹಿತಿಯ ಮೂಲ",
     demoVersion: "ಡೆಮೋ ಆವೃತ್ತಿ",
     demoData:
       "ಡೆಮೋ ಡೇಟಾ — ನೈಜ ಬಳಕೆಗಾಗಿ ಅಲ್ಲ",
-    verified: "ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+  
     notProvided: "ನೀಡಲಾಗಿಲ್ಲ",
     cancel: "ರದ್ದುಮಾಡಿ",
     save: "ಉಳಿಸಿ",
@@ -1772,7 +1774,7 @@ locationUnavailable:
 useMyLocation: "मेरा स्थान उपयोग करें",
 tryAgain: "फिर प्रयास करें",
 nearbySupport: "पास की सहायता",
-verified: "सत्यापित",
+
 away: "दूर",
 supportAreas: "सहायता क्षेत्र",
 getDirections: "दिशा-निर्देश प्राप्त करें",
@@ -1793,7 +1795,7 @@ emergencySource1930:
 updatesTitle: "अपडेट और सूचनाएँ",
 updatesIntro:
   "AVA में महत्वपूर्ण बदलावों, नई सहायता सेवाओं और समीक्षा की गई जानकारी से अवगत रहें।",
-
+supportDataStatusTitle: "सत्यापित सरकारी कानूनी सहायता",
 unread: "अपठित",
 new: "नया",
 markAllRead: "सभी को पढ़ा हुआ चिह्नित करें",
@@ -1891,6 +1893,7 @@ reportPrototypeText:
     // Common
     backToAVA:
       "AVA पर वापस जाएँ",
+      backToSupport: "सहायता पर वापस जाएँ",
     learnMore:
       "और जानें →",
     viewDetails:
@@ -2443,6 +2446,7 @@ reportPrototypeText:
 
     privacyPrototypeTitle:
       "प्रोटोटाइप सूचना",
+      supportDataStatusText: "यह अनुभाग कर्नाटक के जिला विधिक सेवा प्राधिकरणों (DLSAs) की जानकारी का उपयोग करता है। प्रत्येक DLSA के लिए विवरण आधिकारिक स्रोतों पर आधारित हैं और अंतिम बार 28 सितंबर 2026 को सत्यापित किए गए थे।",
 
     privacyPrototypeText:
       "AVA वर्तमान में एक प्रोटोटाइप है। यहाँ बताए गए कुछ गोपनीयता और सुरक्षा फीचर भविष्य के संस्करण के लिए प्रस्तावित डिज़ाइन को दर्शाते हैं और इस प्रोटोटाइप में वास्तविक डेटा सुरक्षा की गारंटी नहीं माने जाने चाहिए।",
