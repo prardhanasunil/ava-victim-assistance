@@ -768,10 +768,13 @@ export default function SupportPage() {
         </div>
       </footer>
 
-      <div className="flex flex-col items-center justify-center gap-3 px-6 pb-10 sm:flex-row">
-        <SupportNearMe />
-        <QuickExit />
-      </div>
+   <section className="w-full min-w-0 overflow-x-hidden bg-ava-cream">
+  <div className="mx-auto w-full max-w-6xl px-6 pb-10">
+    <SupportNearMe />
+  </div>
+</section>
+
+<QuickExit />
     </main>
   );
 }

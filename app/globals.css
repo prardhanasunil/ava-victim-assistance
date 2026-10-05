@@ -17,7 +17,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
   --color-ava-slate: var(--ava-slate);
   --color-ava-dusty: var(--ava-dusty);
   --color-ava-mist: var(--ava-mist);
@@ -30,8 +29,75 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Make the document use the full available app viewport */
+html {
+  width: 100%;
+  min-height: 100%;
+  background: var(--background);
+  overscroll-behavior: none;
+}
+
 body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Prevent accidental horizontal overflow */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+main > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  main {
+    overflow-x: hidden;
+  }
+
+  main section {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+/* Better touch behaviour for the installed PWA */
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+/* Keep media inside the phone viewport */
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
 }

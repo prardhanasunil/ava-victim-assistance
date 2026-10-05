@@ -68,31 +68,26 @@ const serviceTranslations: Record<
     kn: "ಬೆಂಬಲ ಫೌಂಡೇಶನ್",
     hi: "बेम्बला फाउंडेशन",
   },
-
   "apsa-vimanapura": {
     en: "APSA — Association for Promoting Social Action",
     kn: "APSA — ಸಾಮಾಜಿಕ ಕಾರ್ಯ ಉತ್ತೇಜನ ಸಂಘ",
     hi: "APSA — सामाजिक कार्य को बढ़ावा देने वाला संघ",
   },
-
   "apd-lingarajapuram": {
     en: "Association for People with Disability (APD) — Lingarajapuram",
     kn: "ಅಂಗವೈಕಲ್ಯ ಹೊಂದಿರುವವರ ಸಂಘ (APD) — ಲಿಂಗರಾಜಪುರಂ",
     hi: "दिव्यांग व्यक्तियों के लिए संघ (APD) — लिंगराजपुरम",
   },
-
   "apd-kyalasanahalli": {
     en: "Association for People with Disability (APD) — Kyalasanahalli",
     kn: "ಅಂಗವೈಕಲ್ಯ ಹೊಂದಿರುವವರ ಸಂಘ (APD) — ಕ್ಯಾಲಸನಹಳ್ಳಿ",
     hi: "दिव्यांग व्यक्तियों के लिए संघ (APD) — क्यालासनहल्ली",
   },
-
   "nightingales-kasturinagar": {
     en: "Nightingales Centre for Ageing & Alzheimer's",
     kn: "ನೈಟಿಂಗೇಲ್ಸ್ ವೃದ್ಧಾಪ್ಯ ಮತ್ತು ಅಲ್ಜೈಮರ್ಸ್ ಕೇಂದ್ರ",
     hi: "नाइटिंगेल्स वृद्धावस्था एवं अल्ज़ाइमर केंद्र",
   },
-
   "sparsha-mathikere": {
     en: "Sparsha Trust",
     kn: "ಸ್ಪರ್ಶ ಟ್ರಸ್ಟ್",
@@ -456,13 +451,8 @@ function getServiceText(
     };
   }
 
-  if (language === "kn") {
-    return translations.kn;
-  }
-
-  if (language === "hi") {
-    return translations.hi;
-  }
+  if (language === "kn") return translations.kn;
+  if (language === "hi") return translations.hi;
 
   return translations.en;
 }
@@ -473,17 +463,10 @@ function getServiceName(
 ): string {
   const translations = serviceTranslations[service.id];
 
-  if (!translations) {
-    return service.name;
-  }
+  if (!translations) return service.name;
 
-  if (language === "kn") {
-    return translations.kn;
-  }
-
-  if (language === "hi") {
-    return translations.hi;
-  }
+  if (language === "kn") return translations.kn;
+  if (language === "hi") return translations.hi;
 
   return translations.en;
 }
@@ -492,9 +475,7 @@ function matchesFilter(
   service: SupportService,
   filter: SupportFilter
 ): boolean {
-  if (filter === "all") {
-    return true;
-  }
+  if (filter === "all") return true;
 
   const areas = service.supportAreas.map((area) =>
     area.toLowerCase()
@@ -691,33 +672,34 @@ export default function SupportNearMe() {
   return (
     <section
       aria-labelledby="support-near-me-title"
-      className="rounded-3xl border border-ava-rose/30 bg-ava-white p-6 shadow-sm sm:p-8"
+      className="mx-auto box-border w-full max-w-full min-w-0 overflow-hidden rounded-3xl border border-ava-rose/30 bg-ava-white p-6 shadow-sm sm:max-w-6xl sm:p-8"
     >
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="max-w-2xl">
-          <div className="flex items-center gap-3">
+      {/* HEADER */}
+      <div className="flex w-full min-w-0 flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="w-full min-w-0 max-w-2xl">
+          <div className="flex min-w-0 items-center gap-3">
             <span
               aria-hidden="true"
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-ava-rose/10 text-xl"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ava-rose/10 text-xl"
             >
               📍
             </span>
 
-            <div>
+            <div className="min-w-0">
               <h2
                 id="support-near-me-title"
-                className="text-2xl font-bold text-ava-charcoal"
+                className="break-words text-2xl font-bold text-ava-charcoal"
               >
                 {t("supportNearMe")}
               </h2>
 
-              <p className="mt-1 text-sm text-ava-slate">
+              <p className="mt-1 break-words text-sm text-ava-slate">
                 {t("supportNearMeSubtitle")}
               </p>
             </div>
           </div>
 
-          <p className="mt-5 text-xs leading-5 text-ava-dusty">
+          <p className="mt-5 break-words text-xs leading-5 text-ava-dusty">
             🔒 {t("supportNearMePrivacy")}
           </p>
 
@@ -725,33 +707,32 @@ export default function SupportNearMe() {
             <div
               role="status"
               aria-live="polite"
-              className="mt-4 rounded-xl bg-ava-mist/60 px-4 py-3 text-sm text-ava-slate"
+              className="mt-4 w-full min-w-0 rounded-xl bg-ava-mist/60 px-4 py-3 text-sm text-ava-slate"
             >
               {t("findingLocation")}
             </div>
           )}
 
-          {status === "success" &&
-            coordinates && (
-              <div
-                role="status"
-                aria-live="polite"
-                className="mt-4 rounded-xl bg-ava-rose/10 px-4 py-3"
-              >
-                <p className="font-semibold text-ava-charcoal">
-                  ✓ {t("locationFound")}
-                </p>
+          {status === "success" && coordinates && (
+            <div
+              role="status"
+              aria-live="polite"
+              className="mt-4 w-full min-w-0 rounded-xl bg-ava-rose/10 px-4 py-3"
+            >
+              <p className="break-words font-semibold text-ava-charcoal">
+                ✓ {t("locationFound")}
+              </p>
 
-                <p className="mt-1 text-sm text-ava-slate">
-                  {t("nearbySupportSorted")}
-                </p>
-              </div>
-            )}
+              <p className="mt-1 break-words text-sm text-ava-slate">
+                {t("nearbySupportSorted")}
+              </p>
+            </div>
+          )}
 
           {status === "denied" && (
             <div
               role="alert"
-              className="mt-4 rounded-xl border border-ava-mist bg-ava-cream px-4 py-3 text-sm text-ava-slate"
+              className="mt-4 w-full min-w-0 rounded-xl border border-ava-mist bg-ava-cream px-4 py-3 text-sm text-ava-slate"
             >
               {t("locationAccessDenied")}
             </div>
@@ -760,19 +741,19 @@ export default function SupportNearMe() {
           {status === "unavailable" && (
             <div
               role="alert"
-              className="mt-4 rounded-xl border border-ava-mist bg-ava-cream px-4 py-3 text-sm text-ava-slate"
+              className="mt-4 w-full min-w-0 rounded-xl border border-ava-mist bg-ava-cream px-4 py-3 text-sm text-ava-slate"
             >
               {t("locationUnavailable")}
             </div>
           )}
         </div>
 
-        <div className="shrink-0">
+        <div className="w-full min-w-0 sm:w-auto sm:shrink-0">
           {status === "requesting" ? (
             <button
               type="button"
               disabled
-              className="rounded-xl bg-ava-dusty px-5 py-3 text-sm font-semibold text-white opacity-70"
+              className="w-full rounded-xl bg-ava-dusty px-5 py-3 text-sm font-semibold text-white opacity-70 sm:w-auto"
             >
               {t("findingLocation")}
             </button>
@@ -780,7 +761,7 @@ export default function SupportNearMe() {
             <button
               type="button"
               onClick={requestLocation}
-              className="rounded-xl bg-ava-rose px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-ava-rose/40 focus:ring-offset-2"
+              className="w-full rounded-xl bg-ava-rose px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-ava-rose/40 focus:ring-offset-2 sm:w-auto"
             >
               {status === "idle"
                 ? t("useMyLocation")
@@ -792,14 +773,14 @@ export default function SupportNearMe() {
 
       {(nearbyServices.length > 0 ||
         filteredDlsaServices.length > 0) && (
-        <div className="mt-8 border-t border-ava-mist pt-6">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <h3 className="text-xl font-bold text-ava-charcoal">
+        <div className="mt-8 w-full min-w-0 border-t border-ava-mist pt-6">
+          <div className="flex w-full min-w-0 flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div className="min-w-0">
+              <h3 className="break-words text-xl font-bold text-ava-charcoal">
                 {t("nearbySupport")}
               </h3>
 
-              <p className="mt-1 text-sm text-ava-dusty">
+              <p className="mt-1 break-words text-sm text-ava-dusty">
                 {totalResults}{" "}
                 {selectedFilterLabels.servicesFound}
               </p>
@@ -807,13 +788,13 @@ export default function SupportNearMe() {
           </div>
 
           {/* SUPPORT TYPE FILTER */}
-          <div className="mt-6">
-            <p className="mb-3 text-sm font-semibold text-ava-charcoal">
+          <div className="mt-6 w-full min-w-0">
+            <p className="mb-3 break-words text-sm font-semibold text-ava-charcoal">
               {selectedFilterLabels.filterQuestion}
             </p>
 
             <div
-              className="flex gap-2 overflow-x-auto pb-2"
+              className="flex w-full min-w-0 max-w-full gap-2 overflow-x-auto pb-2"
               role="group"
               aria-label={
                 selectedFilterLabels.filterQuestion
@@ -831,7 +812,7 @@ export default function SupportNearMe() {
                       setSelectedFilter(filter)
                     }
                     aria-pressed={isSelected}
-                    className={`shrink-0 rounded-full border px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-ava-rose/40 focus:ring-offset-2 ${
+                    className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-ava-rose/40 focus:ring-offset-2 ${
                       isSelected
                         ? "border-ava-rose bg-ava-rose text-white"
                         : "border-ava-mist bg-ava-white text-ava-slate hover:border-ava-rose/50 hover:bg-ava-rose/5"
@@ -846,13 +827,13 @@ export default function SupportNearMe() {
 
           {/* DLSA RESULTS */}
           {filteredDlsaServices.length > 0 && (
-            <div className="mt-6 space-y-4">
-              <div className="rounded-2xl border border-ava-rose/30 bg-ava-rose/5 px-5 py-4">
-                <p className="text-sm font-semibold text-ava-charcoal">
+            <div className="mt-6 w-full min-w-0 space-y-4">
+              <div className="w-full min-w-0 rounded-2xl border border-ava-rose/30 bg-ava-rose/5 px-5 py-4">
+                <p className="break-words text-sm font-semibold text-ava-charcoal">
                   {selectedDlsaText.heading}
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-ava-slate">
+                <p className="mt-1 break-words text-xs leading-5 text-ava-slate">
                   {selectedDlsaText.description}
                 </p>
               </div>
@@ -874,65 +855,65 @@ export default function SupportNearMe() {
                 return (
                   <article
                     key={dlsa.id}
-                    className="rounded-2xl border border-ava-mist bg-ava-cream p-5"
+                    className="box-border w-full min-w-0 max-w-full overflow-hidden rounded-2xl border border-ava-mist bg-ava-cream p-5"
                   >
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="rounded-full bg-ava-slate px-2.5 py-1 text-xs font-bold text-white">
+                    <div className="flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="w-full min-w-0">
+                        <div className="flex min-w-0 flex-wrap items-center gap-2">
+                          <span className="shrink-0 rounded-full bg-ava-slate px-2.5 py-1 text-xs font-bold text-white">
                             {selectedDlsaText.category}
                           </span>
 
-                          <span className="rounded-full bg-ava-rose/15 px-3 py-1 text-xs font-semibold text-ava-rose">
+                          <span className="shrink-0 rounded-full bg-ava-rose/15 px-3 py-1 text-xs font-semibold text-ava-rose">
                             ✓ {t("verified")}
                           </span>
                         </div>
 
-                        <h4 className="mt-3 text-lg font-bold text-ava-charcoal">
+                        <h4 className="mt-3 break-words text-lg font-bold text-ava-charcoal">
                           {dlsaName}
                         </h4>
 
-                        <p className="mt-1 text-sm text-ava-slate">
+                        <p className="mt-1 break-words text-sm text-ava-slate">
                           {dlsa.address}
                         </p>
 
-                        <p className="mt-2 text-xs text-ava-dusty">
+                        <p className="mt-2 break-words text-xs text-ava-dusty">
                           {selectedDlsaText.addressNote}
                         </p>
                       </div>
                     </div>
 
-                    <div className="mt-4">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-ava-dusty">
+                    <div className="mt-4 w-full min-w-0">
+                      <p className="break-words text-xs font-semibold uppercase tracking-wide text-ava-dusty">
                         {t("supportAreas")}
                       </p>
 
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        <span className="rounded-full bg-ava-white px-3 py-1 text-xs text-ava-slate">
+                      <div className="mt-2 flex min-w-0 flex-wrap gap-2">
+                        <span className="max-w-full break-words rounded-full bg-ava-white px-3 py-1 text-xs text-ava-slate">
                           {selectedDlsaText.legalAid}
                         </span>
 
-                        <span className="rounded-full bg-ava-white px-3 py-1 text-xs text-ava-slate">
+                        <span className="max-w-full break-words rounded-full bg-ava-white px-3 py-1 text-xs text-ava-slate">
                           {selectedDlsaText.legalAdvice}
                         </span>
 
-                        <span className="rounded-full bg-ava-white px-3 py-1 text-xs text-ava-slate">
+                        <span className="max-w-full break-words rounded-full bg-ava-white px-3 py-1 text-xs text-ava-slate">
                           {selectedDlsaText.legalAwareness}
                         </span>
                       </div>
                     </div>
 
-                    <div className="mt-5 border-t border-ava-mist pt-4">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-ava-dusty">
+                    <div className="mt-5 w-full min-w-0 border-t border-ava-mist pt-4">
+                      <p className="break-words text-xs font-semibold uppercase tracking-wide text-ava-dusty">
                         {selectedDlsaText.phone}
                       </p>
 
-                      <div className="mt-2 flex flex-wrap gap-2">
+                      <div className="mt-2 flex min-w-0 flex-wrap gap-2">
                         {dlsa.phones.map((phone) => (
                           <a
                             key={phone}
                             href={`tel:${phone}`}
-                            className="rounded-full bg-ava-white px-3 py-1 text-xs font-semibold text-ava-slate hover:text-ava-charcoal"
+                            className="shrink-0 rounded-full bg-ava-white px-3 py-1 text-xs font-semibold text-ava-slate hover:text-ava-charcoal"
                           >
                             {phone}
                           </a>
@@ -940,14 +921,16 @@ export default function SupportNearMe() {
                       </div>
                     </div>
 
-                    <div className="mt-5 flex flex-col gap-3 border-t border-ava-mist pt-4 sm:flex-row sm:items-center sm:justify-between">
-                      <div className="text-xs text-ava-dusty">
-                        <p>
+                    <div className="mt-5 flex w-full min-w-0 flex-col gap-3 border-t border-ava-mist pt-4 sm:flex-row sm:items-center sm:justify-between">
+                      <div className="w-full min-w-0 text-xs text-ava-dusty sm:flex-1">
+                        <p className="break-words">
                           {t("officialSource")}:{" "}
-                          {dlsa.officialSource}
+                          <span className="break-all">
+                            {dlsa.officialSource}
+                          </span>
                         </p>
 
-                        <p className="mt-1">
+                        <p className="mt-1 break-words">
                           {t("lastVerified")}: 5 October 2026
                         </p>
                       </div>
@@ -956,7 +939,7 @@ export default function SupportNearMe() {
                         href={directionsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-xl bg-ava-slate px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-ava-charcoal focus:outline-none focus:ring-2 focus:ring-ava-slate/40 focus:ring-offset-2"
+                        className="inline-flex w-full shrink-0 items-center justify-center rounded-xl bg-ava-slate px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-ava-charcoal focus:outline-none focus:ring-2 focus:ring-ava-slate/40 focus:ring-offset-2 sm:w-auto"
                       >
                         📍 {t("getDirections")}
                       </a>
@@ -969,126 +952,126 @@ export default function SupportNearMe() {
 
           {/* NGO / OTHER SUPPORT RESULTS */}
           {filteredServices.length > 0 && (
-            <div className="mt-5 space-y-4">
-              {filteredServices.map(
-                (service) => {
-                  const serviceText =
-                    getServiceText(
-                      service,
-                      language
-                    );
+            <div className="mt-5 w-full min-w-0 space-y-4">
+              {filteredServices.map((service) => {
+                const serviceText =
+                  getServiceText(
+                    service,
+                    language
+                  );
 
-                  const originalIndex =
-                    nearbyServices.findIndex(
-                      (item) =>
-                        item.id === service.id
-                    );
+                const originalIndex =
+                  nearbyServices.findIndex(
+                    (item) =>
+                      item.id === service.id
+                  );
 
-                  const directionsUrl =
-                    `https://www.google.com/maps/dir/?api=1&destination=` +
-                    `${service.coordinates.latitude},${service.coordinates.longitude}`;
+                const directionsUrl =
+                  `https://www.google.com/maps/dir/?api=1&destination=` +
+                  `${service.coordinates.latitude},${service.coordinates.longitude}`;
 
-                  return (
-                    <article
-                      key={service.id}
-                      className="rounded-2xl border border-ava-mist bg-ava-cream p-5"
-                    >
-                      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                        <div>
-                          <div className="flex flex-wrap items-center gap-2">
-                            <span className="rounded-full bg-ava-slate px-2.5 py-1 text-xs font-bold text-white">
-                              #{originalIndex + 1}
+                return (
+                  <article
+                    key={service.id}
+                    className="box-border w-full min-w-0 max-w-full overflow-hidden rounded-2xl border border-ava-mist bg-ava-cream p-5"
+                  >
+                    <div className="flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="w-full min-w-0">
+                        <div className="flex min-w-0 flex-wrap items-center gap-2">
+                          <span className="shrink-0 rounded-full bg-ava-slate px-2.5 py-1 text-xs font-bold text-white">
+                            #{originalIndex + 1}
+                          </span>
+
+                          {service.verified && (
+                            <span className="shrink-0 rounded-full bg-ava-rose/15 px-3 py-1 text-xs font-semibold text-ava-rose">
+                              ✓ {t("verified")}
                             </span>
+                          )}
 
-                            {service.verified && (
-                              <span className="rounded-full bg-ava-rose/15 px-3 py-1 text-xs font-semibold text-ava-rose">
-                                ✓ {t("verified")}
-                              </span>
-                            )}
-
-                            <span className="text-xs font-semibold text-ava-dusty">
-                              {serviceText.type}
-                            </span>
-                          </div>
-
-                          <h4 className="mt-3 text-lg font-bold text-ava-charcoal">
-                            {getServiceName(
-                              service,
-                              language
-                            )}
-                          </h4>
-
-                          <p className="mt-1 text-sm text-ava-slate">
-                            {serviceText.address}
-                          </p>
+                          <span className="max-w-full break-words text-xs font-semibold text-ava-dusty">
+                            {serviceText.type}
+                          </span>
                         </div>
 
-                        <div className="shrink-0 rounded-xl bg-ava-rose/10 px-4 py-2 text-center">
-                          <p className="text-lg font-bold text-ava-rose">
-                            {formatDistance(
-                              service.distanceKm
-                            )}
-                          </p>
+                        <h4 className="mt-3 break-words text-lg font-bold text-ava-charcoal">
+                          {getServiceName(
+                            service,
+                            language
+                          )}
+                        </h4>
 
-                          <p className="text-xs text-ava-slate">
-                            {t("away")}
-                          </p>
-                        </div>
+                        <p className="mt-1 break-words text-sm text-ava-slate">
+                          {serviceText.address}
+                        </p>
                       </div>
 
-                      <div className="mt-4">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-ava-dusty">
-                          {t("supportAreas")}
+                      <div className="w-full shrink-0 rounded-xl bg-ava-rose/10 px-4 py-2 text-center sm:w-auto">
+                        <p className="text-lg font-bold text-ava-rose">
+                          {formatDistance(
+                            service.distanceKm
+                          )}
                         </p>
 
-                        <div className="mt-2 flex flex-wrap gap-2">
-                          {serviceText.supportAreas.map(
-                            (area) => (
-                              <span
-                                key={area}
-                                className="rounded-full bg-ava-white px-3 py-1 text-xs text-ava-slate"
-                              >
-                                {area}
-                              </span>
-                            )
-                          )}
-                        </div>
+                        <p className="text-xs text-ava-slate">
+                          {t("away")}
+                        </p>
                       </div>
+                    </div>
 
-                      <div className="mt-5 flex flex-col gap-3 border-t border-ava-mist pt-4 sm:flex-row sm:items-center sm:justify-between">
-                        <div className="text-xs text-ava-dusty">
-                          <p>
-                            {t("officialSource")}:{" "}
+                    <div className="mt-4 w-full min-w-0">
+                      <p className="break-words text-xs font-semibold uppercase tracking-wide text-ava-dusty">
+                        {t("supportAreas")}
+                      </p>
+
+                      <div className="mt-2 flex min-w-0 flex-wrap gap-2">
+                        {serviceText.supportAreas.map(
+                          (area) => (
+                            <span
+                              key={area}
+                              className="max-w-full break-words rounded-full bg-ava-white px-3 py-1 text-xs text-ava-slate"
+                            >
+                              {area}
+                            </span>
+                          )
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="mt-5 flex w-full min-w-0 flex-col gap-3 border-t border-ava-mist pt-4 sm:flex-row sm:items-center sm:justify-between">
+                      <div className="w-full min-w-0 text-xs text-ava-dusty sm:flex-1">
+                        <p className="break-words">
+                          {t("officialSource")}:{" "}
+                          <span className="break-all">
                             {service.officialSource}
-                          </p>
+                          </span>
+                        </p>
 
-                          <p className="mt-1">
-                            {t("lastVerified")}:{" "}
-                            {service.lastVerified}
-                          </p>
-                        </div>
-
-                        <a
-                          href={directionsUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center rounded-xl bg-ava-slate px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-ava-charcoal focus:outline-none focus:ring-2 focus:ring-ava-slate/40 focus:ring-offset-2"
-                        >
-                          📍 {t("getDirections")}
-                        </a>
+                        <p className="mt-1 break-words">
+                          {t("lastVerified")}:{" "}
+                          {service.lastVerified}
+                        </p>
                       </div>
-                    </article>
-                  );
-                }
-              )}
+
+                      <a
+                        href={directionsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full shrink-0 items-center justify-center rounded-xl bg-ava-slate px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-ava-charcoal focus:outline-none focus:ring-2 focus:ring-ava-slate/40 focus:ring-offset-2 sm:w-auto"
+                      >
+                        📍 {t("getDirections")}
+                      </a>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           )}
 
           {/* NO RESULTS */}
           {filteredServices.length === 0 &&
             filteredDlsaServices.length === 0 && (
-              <div className="mt-6 rounded-2xl border border-ava-mist bg-ava-cream px-5 py-8 text-center">
-                <p className="text-sm text-ava-slate">
+              <div className="mt-6 w-full min-w-0 rounded-2xl border border-ava-mist bg-ava-cream px-5 py-8 text-center">
+                <p className="break-words text-sm text-ava-slate">
                   {selectedFilterLabels.noResults}
                 </p>
 
