@@ -1,9 +1,12 @@
 "use client";
 
 import QuickExit from "@/components/QuickExit";
+import SupportNearMe from "@/components/SupportNearMe";
 import Link from "next/link";
 import { useState } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
+
+
 
 const categories = [
   {
@@ -30,11 +33,11 @@ const categories = [
 
 const demoServices = [
   {
-    slug: "verified-legal-aid-service",
-    nameKey: "verifiedLegalAidService",
-    descriptionKey: "legalSupportDescription",
+    slug: "government-legal-aid",
+    nameKey: "governmentLegalSupport",
+    descriptionKey: "governmentLegalSupportDescription",
     category: "Legal Support",
-    location: "Bengaluru Urban",
+    location: "Karnataka",
     type: "Government",
     availability: "Verified",
   },
@@ -54,15 +57,6 @@ const demoServices = [
     category: "Psychological Support",
     location: "Bengaluru Urban",
     type: "Private",
-    availability: "Verified",
-  },
-  {
-    slug: "community-legal-support-centre",
-    nameKey: "communityLegalSupportCentre",
-    descriptionKey: "legalSupportDescription",
-    category: "Legal Support",
-    location: "Belagavi (Belgaum)",
-    type: "NGO",
     availability: "Verified",
   },
   {
@@ -130,7 +124,10 @@ function getDistrictTranslation(
   district: string,
   language: string
 ) {
-  const districtTranslations: Record<string, Record<string, string>> = {
+  const districtTranslations: Record<
+    string,
+    Record<string, string>
+  > = {
     Bagalkot: {
       kn: "ಬಾಗಲಕೋಟೆ",
       hi: "बागलकोट",
@@ -279,12 +276,16 @@ function getCategoryTranslation(
   switch (category) {
     case "Legal Support":
       return t("legalSupport");
+
     case "Medical Support":
       return t("medicalSupport");
+
     case "Psychological Support":
       return t("psychologicalSupport");
+
     case "NGOs & Support Groups":
       return t("supportGroups");
+
     default:
       return category;
   }
@@ -297,30 +298,77 @@ function getTypeTranslation(
   switch (type) {
     case "Government":
       return t("government");
+
     case "NGO":
       return t("ngo");
+
     case "Private":
       return t("private");
+
     default:
       return type;
   }
+}
+
+function getSakhiPanelText(language: string) {
+  if (language === "kn") {
+    return {
+      label: "ಸರ್ಕಾರಿ ಸಹಾಯ ಸೇವೆ",
+      title: "ಸಖಿ ಒನ್ ಸ್ಟಾಪ್ ಕೇಂದ್ರಗಳು",
+      description:
+        "ಹಿಂಸೆಯಿಂದ ಬಾಧಿತರಾದ ಮಹಿಳೆಯರಿಗೆ ವಿವಿಧ ಸಹಾಯ ಸೇವೆಗಳಿಗೆ ಪ್ರವೇಶ ಒದಗಿಸುವ ಸರ್ಕಾರಿ ಬೆಂಬಲಿತ ಕೇಂದ್ರಗಳು.",
+      button: "ಸಖಿ ಕೇಂದ್ರಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+      note:
+        "ಜಿಲ್ಲಾವಾರು ಸಖಿ ಒನ್ ಸ್ಟಾಪ್ ಕೇಂದ್ರಗಳ ಸಂಪರ್ಕ ಮಾಹಿತಿಯನ್ನು ವೀಕ್ಷಿಸಿ.",
+    };
+  }
+
+  if (language === "hi") {
+    return {
+      label: "सरकारी सहायता सेवा",
+      title: "सखी वन स्टॉप सेंटर",
+      description:
+        "हिंसा से प्रभावित महिलाओं को विभिन्न सहायता सेवाओं तक पहुँच प्रदान करने वाले सरकारी सहायता प्राप्त केंद्र।",
+      button: "सखी केंद्र देखें",
+      note:
+        "जिलेवार सखी वन स्टॉप सेंटर की संपर्क जानकारी देखें।",
+    };
+  }
+
+  return {
+    label: "Government Support Service",
+    title: "Sakhi One Stop Centres",
+    description:
+      "Government-supported centres providing women affected by violence with access to integrated support services.",
+    button: "View Sakhi Centres",
+    note:
+      "View district-wise contact information for Sakhi One Stop Centres.",
+  };
 }
 
 export default function SupportPage() {
   const { language, t } = useLanguage();
 
   const [search, setSearch] = useState("");
+
   const [district, setDistrict] =
     useState<(typeof districts)[number]>("All districts");
+
   const [supportType, setSupportType] =
     useState<(typeof supportTypes)[number]>("All support types");
+
   const [organisationType, setOrganisationType] =
-    useState<(typeof organisationTypes)[number]>("All organisations");
+    useState<(typeof organisationTypes)[number]>(
+      "All organisations"
+    );
+
+  const sakhiPanel = getSakhiPanelText(language);
 
   const filteredServices = demoServices.filter((service) => {
-    const searchTerm = search.toLowerCase();
+    const searchTerm = search.toLowerCase().trim();
 
     const matchesSearch =
+      searchTerm === "" ||
       t(service.nameKey)
         .toLowerCase()
         .includes(searchTerm) ||
@@ -333,7 +381,8 @@ export default function SupportPage() {
 
     const matchesDistrict =
       district === "All districts" ||
-      service.location === district;
+      service.location === district ||
+      service.slug === "government-legal-aid";
 
     const matchesSupportType =
       supportType === "All support types" ||
@@ -389,14 +438,14 @@ export default function SupportPage() {
           {t("supportIntro")}
         </p>
 
-        {/* Demo warning */}
-        <div className="mt-8 rounded-2xl border border-ava-rose/30 bg-ava-rose/10 p-5">
+        {/* Data status */}
+        <div className="mt-8 rounded-2xl border border-ava-dusty/30 bg-ava-mist/50 p-5">
           <p className="font-semibold text-ava-charcoal">
-            {t("demoData")}
+            {t("supportDataStatusTitle")}
           </p>
 
           <p className="mt-2 text-sm leading-6 text-ava-slate">
-            {t("supportDemoText")}
+            {t("supportDataStatusText")}
           </p>
         </div>
 
@@ -414,7 +463,9 @@ export default function SupportPage() {
             type="text"
             placeholder={t("supportSearchPlaceholder")}
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(event) =>
+              setSearch(event.target.value)
+            }
             className="mt-2 w-full rounded-xl border border-ava-mist bg-ava-white px-5 py-4 text-ava-charcoal outline-none transition placeholder:text-ava-dusty focus:border-ava-rose focus:ring-2 focus:ring-ava-rose/20"
           />
         </div>
@@ -433,9 +484,9 @@ export default function SupportPage() {
             <select
               id="district-filter"
               value={district}
-              onChange={(e) =>
+              onChange={(event) =>
                 setDistrict(
-                  e.target.value as (typeof districts)[number]
+                  event.target.value as (typeof districts)[number]
                 )
               }
               className="mt-2 w-full rounded-xl border border-ava-mist bg-ava-white px-4 py-3 text-ava-charcoal outline-none transition focus:border-ava-rose focus:ring-2 focus:ring-ava-rose/20"
@@ -460,9 +511,9 @@ export default function SupportPage() {
             <select
               id="support-type-filter"
               value={supportType}
-              onChange={(e) =>
+              onChange={(event) =>
                 setSupportType(
-                  e.target.value as (typeof supportTypes)[number]
+                  event.target.value as (typeof supportTypes)[number]
                 )
               }
               className="mt-2 w-full rounded-xl border border-ava-mist bg-ava-white px-4 py-3 text-ava-charcoal outline-none transition focus:border-ava-rose focus:ring-2 focus:ring-ava-rose/20"
@@ -495,9 +546,9 @@ export default function SupportPage() {
             <select
               id="organisation-type-filter"
               value={organisationType}
-              onChange={(e) =>
+              onChange={(event) =>
                 setOrganisationType(
-                  e.target.value as (typeof organisationTypes)[number]
+                  event.target.value as (typeof organisationTypes)[number]
                 )
               }
               className="mt-2 w-full rounded-xl border border-ava-mist bg-ava-white px-4 py-3 text-ava-charcoal outline-none transition focus:border-ava-rose focus:ring-2 focus:ring-ava-rose/20"
@@ -519,7 +570,7 @@ export default function SupportPage() {
       </section>
 
       {/* Categories */}
-      <section className="mx-auto max-w-6xl px-6 pb-12">
+      <section className="mx-auto max-w-6xl px-6 pb-10">
         <h2 className="text-2xl font-bold text-ava-charcoal">
           {t("browseSupportType")}
         </h2>
@@ -530,25 +581,28 @@ export default function SupportPage() {
               key={category.titleKey}
               type="button"
               onClick={() => {
-                const categoryName =
-                  category.titleKey === "legalSupport"
-                    ? "Legal Support"
-                    : category.titleKey === "medicalSupport"
-                      ? "Medical Support"
-                      : category.titleKey === "psychologicalSupport"
-                        ? "Psychological Support"
-                        : "NGOs & Support Groups";
+  if (category.titleKey === "supportGroups") {
+    window.location.href = "/support/ngos";
+    return;
+  }
 
-                setSupportType(
-                  categoryName as (typeof supportTypes)[number]
-                );
+  const categoryName =
+    category.titleKey === "legalSupport"
+      ? "Legal Support"
+      : category.titleKey === "medicalSupport"
+        ? "Medical Support"
+        : "Psychological Support";
 
-                document
-                  .getElementById("support-results")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-              }}
+  setSupportType(
+    categoryName as (typeof supportTypes)[number]
+  );
+
+  document
+    .getElementById("support-results")
+    ?.scrollIntoView({
+      behavior: "smooth",
+    });
+}}
               className={`rounded-2xl border p-6 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-md ${
                 index === 2
                   ? "border-ava-rose/40 bg-ava-rose/10"
@@ -568,6 +622,39 @@ export default function SupportPage() {
               </p>
             </button>
           ))}
+        </div>
+      </section>
+
+      {/* Sakhi One Stop Centres */}
+      <section className="mx-auto max-w-6xl px-6 pb-12">
+        <div className="rounded-3xl border border-ava-rose/30 bg-white p-6 shadow-sm sm:p-8">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-2xl">
+              <span className="inline-flex rounded-full bg-ava-rose/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ava-rose">
+                {sakhiPanel.label}
+              </span>
+
+              <h2 className="mt-4 text-2xl font-bold text-ava-charcoal sm:text-3xl">
+                {sakhiPanel.title}
+              </h2>
+
+              <p className="mt-3 text-sm leading-6 text-ava-slate sm:text-base">
+                {sakhiPanel.description}
+              </p>
+
+              <p className="mt-3 text-xs leading-5 text-ava-dusty">
+                {sakhiPanel.note}
+              </p>
+            </div>
+
+            <Link
+              href="/support/sakhi"
+              className="inline-flex shrink-0 items-center justify-center rounded-xl bg-ava-rose px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+            >
+              {sakhiPanel.button}
+              <span className="ml-2">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -643,7 +730,11 @@ export default function SupportPage() {
                     </div>
 
                     <Link
-                      href={`/support/${service.slug}`}
+                      href={
+                        service.slug === "government-legal-aid"
+                          ? "/support/government-legal-aid"
+                          : `/support/${service.slug}`
+                      }
                       className="rounded-xl border border-ava-dusty bg-ava-white px-5 py-3 text-sm font-semibold text-ava-slate transition hover:border-ava-rose hover:bg-ava-rose/10 hover:text-ava-rose"
                     >
                       {t("viewDetails")}
@@ -673,13 +764,14 @@ export default function SupportPage() {
             {t("appName")} — {t("tagline")}
           </p>
 
-          <p className="mt-2">
-            {t("footerDescription")}
-          </p>
+          <p className="mt-2">{t("footerDescription")}</p>
         </div>
       </footer>
 
-      <QuickExit />
+      <div className="flex flex-col items-center justify-center gap-3 px-6 pb-10 sm:flex-row">
+        <SupportNearMe />
+        <QuickExit />
+      </div>
     </main>
   );
 }

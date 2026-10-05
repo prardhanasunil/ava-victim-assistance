@@ -10,54 +10,135 @@ childHelpline: "Child Helpline",
 cyberFinancialFraud: "Cyber Financial Fraud",
 callNow: "Call Now",
 verifiedContact: "Verified Contact",
-
-emergencySource112:
-  "Government of India — Emergency Response Support System (112).",
-emergencySource181:
-  "Government of India — Women Helpline (181).",
-emergencySource1098:
-  "Government of India — Child Helpline (1098).",
-emergencySource1930:
-  "Government of India — Cyber Crime Helpline (1930) for reporting cyber financial fraud.",
-markAsRead: "Mark as read",
-markAllRead: "Mark all as read",
+    governmentLegalSupport:
+      "Government Legal Support",
+    governmentLegalSupportDescription:
+      "Access government legal-aid services through Karnataka's District Legal Services Authorities (DLSAs).",
+sakhiOneStopCentres: "Sakhi — One Stop Centres",
+sakhiOneStopCentresDescription:
+  "Government-supported One Stop Centres providing support and assistance to women affected by violence.",
+    verifiedDlsaDirectory:
+      "Verified DLSA Directory",
+    dlsaDirectoryNote:
+      "This directory contains District Legal Services Authority information for Karnataka. Details are based on official sources recorded for each DLSA.",
+    dlsaSearchPlaceholder:
+      "Search by DLSA, district, address or service",
+    dlsaDirectory:
+      "District Legal Services Authorities",
+    emergencySource112:
+      "Government of India — Emergency Response Support System (112).",
+    emergencySource181:
+      "Government of India — Women Helpline (181).",
+    emergencySource1098:
+      "Government of India — Child Helpline (1098).",
+    emergencySource1930:
+      "Government of India — Cyber Crime Helpline (1930) for reporting cyber financial fraud.",
+    markAsRead: "Mark as read",
+    markAllRead: "Mark all as read",
     updatesLabel: "Updates & Notifications",
-updatesTitle: "Updates & Notifications",
-updatesIntro:
-  "Stay informed about important changes, new support services and reviewed information on AVA.",
+    updatesTitle: "Updates & Notifications",
+    updatesIntro:
+      "Stay informed about important changes, new support services and reviewed information on AVA.",
 
-unread: "unread",
-new: "New",
+supportNearMe: "Support Near Me",
+supportNearMeSubtitle:
+  "Find verified support services near your current location.",
+supportNearMePrivacy:
+  "Your location is used only to find nearby support services. AVA does not store or continuously track your location.",
+findingLocation: "Finding your location…",
+locationFound: "Location found",
+nearbySupportSorted:
+  "Nearby support services have been sorted by distance.",
+locationAccessDenied:
+  "Location access was not allowed. You can still search for support by district.",
+locationUnavailable:
+  "Your location could not be determined. Please check your device location settings and try again.",
+useMyLocation: "Use My Location",
+tryAgain: "Try Again",
+nearbySupport: "Nearby Support",
+verified: "Verified",
+away: "away",
+supportAreas: "Support areas",
+getDirections: "Get Directions",
+officialSource: "Official source",
+lastVerified: "Last verified",
 
+    ngoDirectory: "NGOs & Support Groups",
+ngoDirectorySubtitle:
+  "Find organisations and community services that may support victims, survivors and vulnerable people across Karnataka.",
+ngoDirectoryAboutTitle: "About this directory",
+ngoDirectoryAboutText:
+  "AVA includes organisations researched against available authoritative sources. Always confirm current services, contact details and availability before relying on them.",
+ngoSearchPlaceholder: "Search organisations, services or support areas",
+ngoDistrict: "District",
+ngoSupportArea: "Support area",
+ngoOrganisationType: "Organisation type",
+ngoAvailability: "Availability",
+ngoOrganisationsFound: "organisations found",
+ngoClearFilters: "Clear filters",
+ngoVerified: "Verified",
+ngoRequiresReview: "Requires review",
+ngoSupportAreas: "Support areas",
+ngoServices: "Services",
+ngoWhoTheySupport: "Who they support",
+ngoLanguages: "Languages",
+ngoContact: "Contact",
+ngoLocation: "Location",
+ngoAvailabilityLabel: "Availability",
+ngoAccessibility: "Accessibility",
+ngoSource: "Source",
+ngoLastResearched: "Last researched",
+ngoHowAvaHelps: "How AVA can help",
+ngoWebsite: "Website",
+ngoEmail: "Email",
+ngoPhone: "Phone",
+ngoBackToSupport: "Back to support",
+ngoNoResults: "No organisations match your filters.",
+ngoReviewNotice:
+  "Please confirm current services and contact details directly with the organisation.",
+ngoKarnatakaDirectory: "Karnataka Directory",
+ngoAvaSupportDirectory: "AVA Support Directory",
+ngoAllSupportAreas: "All support areas",
+ngoAllOrganisationTypes: "All organisation types",
+ngoAllDistricts: "All districts",
+ngoAllAvailability: "All availability",
+ngoContactForAvailability: "Contact organisation for current availability",
+ngoNGO: "NGO",
+ngoCharitableOrganisation: "Charitable Organisation",
+ngoCommunityOrganisation: "Community Organisation",
+ngoPeerSupportGroup: "Peer Support Group",
 
-updateAll: "All",
-updateImportant: "Important",
-updateService: "Services",
-updateLegal: "Legal",
+    unread: "unread",
+    new: "New",
 
-updateCompensationTitle: "Victim Compensation Information Updated",
-updateCompensationText:
-  "Information about the victim compensation application process has been updated.",
-updateTwoDaysAgo: "2 days ago",
+    updateAll: "All",
+    updateImportant: "Important",
+    updateService: "Services",
+    updateLegal: "Legal",
 
-updatePsychologicalTitle: "New Psychological Support Service Added",
-updatePsychologicalText:
-  "A new psychological support service has been added to the AVA support directory.",
-updateFiveDaysAgo: "5 days ago",
+    updateCompensationTitle: "Victim Compensation Information Updated",
+    updateCompensationText:
+      "Information about the victim compensation application process has been updated.",
+    updateTwoDaysAgo: "2 days ago",
 
-updateRightsTitle: "Victim Rights Information Reviewed",
-updateRightsText:
-  "Information about victim rights has been reviewed as part of the information verification process.",
-updateTwelveDaysAgo: "12 days ago",
+    updatePsychologicalTitle: "New Psychological Support Service Added",
+    updatePsychologicalText:
+      "A new psychological support service has been added to the AVA support directory.",
+    updateFiveDaysAgo: "5 days ago",
 
-updateLegalAidTitle: "Legal Aid Information Updated",
-updateLegalAidText:
-  "Information about available legal support services has been reviewed and updated.",
-updateFifteenDaysAgo: "15 days ago",
+    updateRightsTitle: "Victim Rights Information Reviewed",
+    updateRightsText:
+      "Information about victim rights has been reviewed as part of the information verification process.",
+    updateTwelveDaysAgo: "12 days ago",
 
-updatesPrototypeTitle: "Prototype Notice",
-updatesPrototypeText:
-  "These updates are demonstration content for the AVA prototype. In a full implementation, authorised administrators would publish verified updates.",
+    updateLegalAidTitle: "Legal Aid Information Updated",
+    updateLegalAidText:
+      "Information about available legal support services has been reviewed and updated.",
+    updateFifteenDaysAgo: "15 days ago",
+
+    updatesPrototypeTitle: "Prototype Notice",
+    updatesPrototypeText:
+      "These updates are demonstration content for the AVA prototype. In a full implementation, authorised administrators would publish verified updates.",
 
     // Navigation
     home: "Home",
@@ -202,7 +283,15 @@ updatesPrototypeText:
     noResults: "No support services found.",
     tryDifferentFilters:
       "Try changing your search or filters.",
+governmentLegalSupport:
+  "Government Legal Support",
+governmentLegalSupportDescription:
+  "Access government legal-aid services through Karnataka's District Legal Services Authorities (DLSAs).",
 
+supportDataStatusTitle:
+  "Verified Government Legal Support",
+supportDataStatusText:
+  "This section uses District Legal Services Authority information for Karnataka. Details are based on the official sources recorded for each DLSA and were last verified on 28 September 2026.",
     // Service details
     serviceDetails: "Service Details",
     description: "Description",
@@ -730,6 +819,65 @@ reportPrototypeText:
 updatesTitle: "ನವೀಕರಣಗಳು ಮತ್ತು ಅಧಿಸೂಚನೆಗಳು",
 updatesIntro:
   "AVA ಯಲ್ಲಿನ ಪ್ರಮುಖ ಬದಲಾವಣೆಗಳು, ಹೊಸ ಸಹಾಯ ಸೇವೆಗಳು ಮತ್ತು ಪರಿಶೀಲಿಸಲಾದ ಮಾಹಿತಿಯ ಕುರಿತು ತಿಳಿದುಕೊಳ್ಳಿ.",
+governmentLegalSupport:
+  "ಸರ್ಕಾರಿ ಕಾನೂನು ಸಹಾಯ",
+governmentLegalSupportDescription:
+  "ಕರ್ನಾಟಕದ ಜಿಲ್ಲಾ ಕಾನೂನು ಸೇವೆಗಳ ಪ್ರಾಧಿಕಾರಗಳ (DLSA) ಮೂಲಕ ಸರ್ಕಾರಿ ಕಾನೂನು ಸಹಾಯ ಸೇವೆಗಳಿಗೆ ಪ್ರವೇಶ ಪಡೆಯಿರಿ.",
+sakhiOneStopCentres: "ಸಖಿ — ಒನ್ ಸ್ಟಾಪ್ ಸೆಂಟರ್‌ಗಳು",
+sakhiOneStopCentresDescription:
+  "ಹಿಂಸೆಗೆ ಒಳಗಾದ ಮಹಿಳೆಯರಿಗೆ ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ ಒದಗಿಸುವ ಸರ್ಕಾರಿ ಬೆಂಬಲಿತ ಒನ್ ಸ್ಟಾಪ್ ಸೆಂಟರ್‌ಗಳು.",
+verifiedDlsaDirectory:
+  "ಪರಿಶೀಲಿಸಲಾದ DLSA ಡೈರೆಕ್ಟರಿ",
+dlsaDirectoryNote:
+  "ಈ ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಕರ್ನಾಟಕದ ಜಿಲ್ಲಾ ಕಾನೂನು ಸೇವೆಗಳ ಪ್ರಾಧಿಕಾರಗಳ ಮಾಹಿತಿಯನ್ನು ನೀಡಲಾಗಿದೆ. ವಿವರಗಳು ಪ್ರತಿ DLSA ಗಾಗಿ ದಾಖಲಿಸಲಾದ ಅಧಿಕೃತ ಮೂಲಗಳನ್ನು ಆಧರಿಸಿವೆ.",
+dlsaSearchPlaceholder:
+  "DLSA, ಜಿಲ್ಲೆ, ವಿಳಾಸ ಅಥವಾ ಸೇವೆಯ ಮೂಲಕ ಹುಡುಕಿ",
+dlsaDirectory:
+  "ಜಿಲ್ಲಾ ಕಾನೂನು ಸೇವೆಗಳ ಪ್ರಾಧಿಕಾರಗಳು",
+  ngoDirectory: "ಎನ್‌ಜಿಒಗಳು ಮತ್ತು ಬೆಂಬಲ ಗುಂಪುಗಳು",
+ngoDirectorySubtitle:
+  "ಕರ್ನಾಟಕದಾದ್ಯಂತ ಬಾಧಿತರು, ಬದುಕುಳಿದವರು ಮತ್ತು ದುರ್ಬಲ ವ್ಯಕ್ತಿಗಳಿಗೆ ಬೆಂಬಲ ನೀಡಬಹುದಾದ ಸಂಸ್ಥೆಗಳು ಮತ್ತು ಸಮುದಾಯ ಸೇವೆಗಳನ್ನು ಹುಡುಕಿ.",
+ngoDirectoryAboutTitle: "ಈ ಡೈರೆಕ್ಟರಿ ಬಗ್ಗೆ",
+ngoDirectoryAboutText:
+  "ಲಭ್ಯವಿರುವ ಅಧಿಕೃತ ಮೂಲಗಳ ಆಧಾರದ ಮೇಲೆ AVA ಸಂಸ್ಥೆಗಳ ಮಾಹಿತಿಯನ್ನು ಸಂಶೋಧಿಸಿದೆ. ಸೇವೆಗಳು, ಸಂಪರ್ಕ ವಿವರಗಳು ಮತ್ತು ಲಭ್ಯತೆಯನ್ನು ಬಳಸುವ ಮೊದಲು ನೇರವಾಗಿ ದೃಢೀಕರಿಸಿ.",
+ngoSearchPlaceholder: "ಸಂಸ್ಥೆಗಳು, ಸೇವೆಗಳು ಅಥವಾ ಬೆಂಬಲ ಕ್ಷೇತ್ರಗಳನ್ನು ಹುಡುಕಿ",
+ngoDistrict: "ಜಿಲ್ಲೆ",
+ngoSupportArea: "ಬೆಂಬಲ ಕ್ಷೇತ್ರ",
+ngoOrganisationType: "ಸಂಸ್ಥೆಯ ಪ್ರಕಾರ",
+ngoAvailability: "ಲಭ್ಯತೆ",
+ngoOrganisationsFound: "ಸಂಸ್ಥೆಗಳು ಕಂಡುಬಂದಿವೆ",
+ngoClearFilters: "ಫಿಲ್ಟರ್‌ಗಳನ್ನು ತೆರವುಗೊಳಿಸಿ",
+ngoVerified: "ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+ngoRequiresReview: "ಪುನಃ ಪರಿಶೀಲನೆ ಅಗತ್ಯ",
+ngoSupportAreas: "ಬೆಂಬಲ ಕ್ಷೇತ್ರಗಳು",
+ngoServices: "ಸೇವೆಗಳು",
+ngoWhoTheySupport: "ಯಾರಿಗೆ ಬೆಂಬಲ",
+ngoLanguages: "ಭಾಷೆಗಳು",
+ngoContact: "ಸಂಪರ್ಕ",
+ngoLocation: "ಸ್ಥಳ",
+ngoAvailabilityLabel: "ಲಭ್ಯತೆ",
+ngoAccessibility: "ಪ್ರವೇಶಸೌಲಭ್ಯ",
+ngoSource: "ಮೂಲ",
+ngoLastResearched: "ಕೊನೆಯ ಸಂಶೋಧನೆ",
+ngoHowAvaHelps: "AVA ಹೇಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ",
+ngoWebsite: "ವೆಬ್‌ಸೈಟ್",
+ngoEmail: "ಇಮೇಲ್",
+ngoPhone: "ಫೋನ್",
+ngoBackToSupport: "ಬೆಂಬಲಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+ngoNoResults: "ನಿಮ್ಮ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಯಾವುದೇ ಸಂಸ್ಥೆಗಳು ಹೊಂದಿಕೆಯಾಗಲಿಲ್ಲ.",
+ngoReviewNotice:
+  "ಪ್ರಸ್ತುತ ಸೇವೆಗಳು ಮತ್ತು ಸಂಪರ್ಕ ವಿವರಗಳನ್ನು ಸಂಸ್ಥೆಯೊಂದಿಗೆ ನೇರವಾಗಿ ದೃಢೀಕರಿಸಿ.",
+ngoKarnatakaDirectory: "ಕರ್ನಾಟಕ ಡೈರೆಕ್ಟರಿ",
+ngoAvaSupportDirectory: "AVA ಬೆಂಬಲ ಡೈರೆಕ್ಟರಿ",
+ngoAllSupportAreas: "ಎಲ್ಲಾ ಬೆಂಬಲ ಕ್ಷೇತ್ರಗಳು",
+ngoAllOrganisationTypes: "ಎಲ್ಲಾ ಸಂಸ್ಥೆಯ ಪ್ರಕಾರಗಳು",
+ngoAllDistricts: "ಎಲ್ಲಾ ಜಿಲ್ಲೆಗಳು",
+ngoAllAvailability: "ಎಲ್ಲಾ ಲಭ್ಯತೆ",
+ngoContactForAvailability: "ಪ್ರಸ್ತುತ ಲಭ್ಯತೆಗಾಗಿ ಸಂಸ್ಥೆಯನ್ನು ಸಂಪರ್ಕಿಸಿ",
+ngoNGO: "ಎನ್‌ಜಿಒ",
+ngoCharitableOrganisation: "ಚಾರಿಟಬಲ್ ಸಂಸ್ಥೆ",
+ngoCommunityOrganisation: "ಸಮುದಾಯ ಸಂಸ್ಥೆ",
+ngoPeerSupportGroup: "ಸಹಪಾಠಿ ಬೆಂಬಲ ಗುಂಪು",
 
 unread: "ಓದದವು",
 new: "ಹೊಸದು",
@@ -740,6 +888,28 @@ childHelpline: "ಮಕ್ಕಳ ಸಹಾಯವಾಣಿ",
 cyberFinancialFraud: "ಸೈಬರ್ ಹಣಕಾಸು ವಂಚನೆ",
 callNow: "ಈಗ ಕರೆ ಮಾಡಿ",
 verifiedContact: "ಪರಿಶೀಲಿಸಲಾದ ಸಂಪರ್ಕ",
+supportNearMe: "ನನ್ನ ಹತ್ತಿರದ ಸಹಾಯ",
+supportNearMeSubtitle:
+  "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಸ್ಥಳದ ಸಮೀಪದಲ್ಲಿರುವ ಪರಿಶೀಲಿತ ಸಹಾಯ ಸೇವೆಗಳನ್ನು ಹುಡುಕಿ.",
+supportNearMePrivacy:
+  "ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಸಮೀಪದ ಸಹಾಯ ಸೇವೆಗಳನ್ನು ಹುಡುಕಲು ಮಾತ್ರ ಬಳಸಲಾಗುತ್ತದೆ. AVA ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ ಅಥವಾ ನಿರಂತರವಾಗಿ ಟ್ರ್ಯಾಕ್ ಮಾಡುವುದಿಲ್ಲ.",
+findingLocation: "ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಹುಡುಕಲಾಗುತ್ತಿದೆ…",
+locationFound: "ಸ್ಥಳ ಪತ್ತೆಯಾಗಿದೆ",
+nearbySupportSorted:
+  "ಸಮೀಪದ ಸಹಾಯ ಸೇವೆಗಳನ್ನು ದೂರದ ಆಧಾರದ ಮೇಲೆ ವಿಂಗಡಿಸಲಾಗಿದೆ.",
+locationAccessDenied:
+  "ಸ್ಥಳ ಪ್ರವೇಶವನ್ನು ಅನುಮತಿಸಲಾಗಿಲ್ಲ. ನೀವು ಇನ್ನೂ ಜಿಲ್ಲೆಯ ಮೂಲಕ ಸಹಾಯವನ್ನು ಹುಡುಕಬಹುದು.",
+locationUnavailable:
+  "ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಪತ್ತೆಹಚ್ಚಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ನಿಮ್ಮ ಸಾಧನದ ಸ್ಥಳ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+useMyLocation: "ನನ್ನ ಸ್ಥಳ ಬಳಸಿ",
+tryAgain: "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+nearbySupport: "ಸಮೀಪದ ಸಹಾಯ",
+verified: "ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+away: "ದೂರ",
+supportAreas: "ಸಹಾಯ ಕ್ಷೇತ್ರಗಳು",
+getDirections: "ದಿಕ್ಕುಗಳನ್ನು ಪಡೆಯಿರಿ",
+officialSource: "ಅಧಿಕೃತ ಮೂಲ",
+lastVerified: "ಕೊನೆಯದಾಗಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
 
 emergencySource112:
   "ಭಾರತ ಸರ್ಕಾರ — ತುರ್ತು ಪ್ರತಿಕ್ರಿಯೆ ಬೆಂಬಲ ವ್ಯವಸ್ಥೆ (112).",
@@ -986,6 +1156,12 @@ reportPrototypeText:
       "ಯಾವುದೇ ಸಹಾಯ ಸೇವೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ.",
     tryDifferentFilters:
       "ನಿಮ್ಮ ಹುಡುಕಾಟ ಅಥವಾ ಫಿಲ್ಟರ್‌ಗಳನ್ನು ಬದಲಾಯಿಸಿ.",
+  
+
+    supportDataStatusTitle:
+      "ಪರಿಶೀಲಿಸಲಾದ ಸರ್ಕಾರಿ ಕಾನೂನು ಸಹಾಯ",
+    supportDataStatusText:
+      "ಈ ವಿಭಾಗವು ಕರ್ನಾಟಕದ ಜಿಲ್ಲಾ ಕಾನೂನು ಸೇವೆಗಳ ಪ್ರಾಧಿಕಾರಗಳ ಮಾಹಿತಿಯನ್ನು ಬಳಸುತ್ತದೆ. ಪ್ರತಿ DLSA ಗಾಗಿ ದಾಖಲಿಸಲಾದ ಅಧಿಕೃತ ಮೂಲಗಳ ಆಧಾರದ ಮೇಲೆ ವಿವರಗಳನ್ನು ನೀಡಲಾಗಿದೆ ಮತ್ತು ಕೊನೆಯದಾಗಿ 28 ಸೆಪ್ಟೆಂಬರ್ 2026 ರಂದು ಪರಿಶೀಲಿಸಲಾಗಿದೆ.",
 
     // Service details
     serviceDetails: "ಸೇವೆಯ ವಿವರಗಳು",
@@ -1520,6 +1696,88 @@ childHelpline: "बाल हेल्पलाइन",
 cyberFinancialFraud: "साइबर वित्तीय धोखाधड़ी",
 callNow: "अभी कॉल करें",
 verifiedContact: "सत्यापित संपर्क",
+governmentLegalSupport:
+  "सरकारी कानूनी सहायता",
+governmentLegalSupportDescription:
+  "कर्नाटक के जिला विधिक सेवा प्राधिकरणों (DLSA) के माध्यम से सरकारी कानूनी सहायता सेवाओं तक पहुँच प्राप्त करें।",
+sakhiOneStopCentres: "सखी — वन स्टॉप सेंटर",
+sakhiOneStopCentresDescription:
+  "हिंसा से प्रभावित महिलाओं को सहायता और समर्थन प्रदान करने वाले सरकारी समर्थित वन स्टॉप सेंटर।",
+verifiedDlsaDirectory:
+  "सत्यापित DLSA निर्देशिका",
+dlsaDirectoryNote:
+  "इस निर्देशिका में कर्नाटक के जिला विधिक सेवा प्राधिकरणों की जानकारी दी गई है। विवरण प्रत्येक DLSA के लिए दर्ज आधिकारिक स्रोतों पर आधारित हैं।",
+dlsaSearchPlaceholder:
+  "DLSA, जिले, पते या सेवा के आधार पर खोजें",
+dlsaDirectory:
+  "जिला विधिक सेवा प्राधिकरण",
+ngoDirectory: "एनजीओ और सहायता समूह",
+ngoDirectorySubtitle:
+  "कर्नाटक में पीड़ितों, बचे हुए लोगों और संवेदनशील व्यक्तियों की सहायता करने वाले संगठनों और सामुदायिक सेवाओं को खोजें।",
+ngoDirectoryAboutTitle: "इस निर्देशिका के बारे में",
+ngoDirectoryAboutText:
+  "AVA उपलब्ध आधिकारिक स्रोतों के आधार पर संगठनों की जानकारी शामिल करता है। सेवाओं, संपर्क विवरण और उपलब्धता पर भरोसा करने से पहले सीधे पुष्टि करें।",
+ngoSearchPlaceholder: "संगठन, सेवाएँ या सहायता क्षेत्र खोजें",
+ngoDistrict: "जिला",
+ngoSupportArea: "सहायता क्षेत्र",
+ngoOrganisationType: "संगठन का प्रकार",
+ngoAvailability: "उपलब्धता",
+ngoOrganisationsFound: "संगठन मिले",
+ngoClearFilters: "फ़िल्टर साफ़ करें",
+ngoVerified: "सत्यापित",
+ngoRequiresReview: "पुनः समीक्षा आवश्यक",
+ngoSupportAreas: "सहायता क्षेत्र",
+ngoServices: "सेवाएँ",
+ngoWhoTheySupport: "किसके लिए",
+ngoLanguages: "भाषाएँ",
+ngoContact: "संपर्क",
+ngoLocation: "स्थान",
+ngoAvailabilityLabel: "उपलब्धता",
+ngoAccessibility: "सुलभता",
+ngoSource: "स्रोत",
+ngoLastResearched: "अंतिम शोध",
+ngoHowAvaHelps: "AVA कैसे मदद कर सकता है",
+ngoWebsite: "वेबसाइट",
+ngoEmail: "ईमेल",
+ngoPhone: "फ़ोन",
+ngoBackToSupport: "सहायता पर वापस जाएँ",
+ngoNoResults: "आपके फ़िल्टर से कोई संगठन मेल नहीं खाता।",
+ngoReviewNotice:
+  "वर्तमान सेवाओं और संपर्क विवरण की सीधे संगठन से पुष्टि करें।",
+ngoKarnatakaDirectory: "कर्नाटक निर्देशिका",
+ngoAvaSupportDirectory: "AVA सहायता निर्देशिका",
+ngoAllSupportAreas: "सभी सहायता क्षेत्र",
+ngoAllOrganisationTypes: "सभी संगठन प्रकार",
+ngoAllDistricts: "सभी जिले",
+ngoAllAvailability: "सभी उपलब्धता",
+ngoContactForAvailability: "वर्तमान उपलब्धता के लिए संगठन से संपर्क करें",
+ngoNGO: "एनजीओ",
+ngoCharitableOrganisation: "धर्मार्थ संगठन",
+ngoCommunityOrganisation: "सामुदायिक संगठन",
+ngoPeerSupportGroup: "सहायता समूह",
+
+supportNearMe: "मेरे पास सहायता",
+supportNearMeSubtitle:
+  "अपने वर्तमान स्थान के पास सत्यापित सहायता सेवाएँ खोजें।",
+supportNearMePrivacy:
+  "आपके स्थान का उपयोग केवल पास की सहायता सेवाएँ खोजने के लिए किया जाता है। AVA आपके स्थान को संग्रहीत या लगातार ट्रैक नहीं करता।",
+findingLocation: "आपका स्थान खोजा जा रहा है…",
+locationFound: "स्थान मिल गया",
+nearbySupportSorted:
+  "पास की सहायता सेवाओं को दूरी के अनुसार व्यवस्थित किया गया है।",
+locationAccessDenied:
+  "स्थान की अनुमति नहीं दी गई। आप अभी भी जिले के अनुसार सहायता खोज सकते हैं।",
+locationUnavailable:
+  "आपका स्थान निर्धारित नहीं किया जा सका। अपने डिवाइस की स्थान सेटिंग जाँचें और फिर प्रयास करें।",
+useMyLocation: "मेरा स्थान उपयोग करें",
+tryAgain: "फिर प्रयास करें",
+nearbySupport: "पास की सहायता",
+verified: "सत्यापित",
+away: "दूर",
+supportAreas: "सहायता क्षेत्र",
+getDirections: "दिशा-निर्देश प्राप्त करें",
+officialSource: "आधिकारिक स्रोत",
+lastVerified: "अंतिम सत्यापन",
 
 emergencySource112:
   "भारत सरकार — आपातकालीन प्रतिक्रिया सहायता प्रणाली (112)।",
