@@ -581,28 +581,29 @@ export default function SupportPage() {
               key={category.titleKey}
               type="button"
               onClick={() => {
-  if (category.titleKey === "supportGroups") {
-    window.location.href = "/support/ngos";
-    return;
-  }
+                if (category.titleKey === "supportGroups") {
+                  window.location.href = "/support/ngos";
+                  return;
+                }
 
-  const categoryName =
-    category.titleKey === "legalSupport"
-      ? "Legal Support"
-      : category.titleKey === "medicalSupport"
-        ? "Medical Support"
-        : "Psychological Support";
+                if (category.titleKey === "medicalSupport") {
+                  window.location.href = "/support/medical";
+                  return;
+                }
 
-  setSupportType(
-    categoryName as (typeof supportTypes)[number]
-  );
+                const categoryName =
+                  category.titleKey === "legalSupport"
+                    ? "Legal Support"
+                    : "Psychological Support";
 
-  document
-    .getElementById("support-results")
-    ?.scrollIntoView({
-      behavior: "smooth",
-    });
-}}
+                setSupportType(
+                  categoryName as (typeof supportTypes)[number]
+                );
+
+                document
+                  .getElementById("support-results")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
               className={`rounded-2xl border p-6 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-md ${
                 index === 2
                   ? "border-ava-rose/40 bg-ava-rose/10"
